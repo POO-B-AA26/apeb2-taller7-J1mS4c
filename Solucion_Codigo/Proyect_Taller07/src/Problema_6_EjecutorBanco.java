@@ -13,13 +13,7 @@ El banco ofrece a sus clientes dos tipos de cuentas, una de CHEQUES y una de AHO
  *
  * @version 1.0
  */
-/**
- * Problema 06: Sistema Un Banco con cuentas de cheques, ahorros y platino.
- *
- * @author Joan Salinas
- *
- * @version 1.0
- */
+
 class CuentaBancaria{
     public String numeroCuenta;
     public String nombreCliente;
