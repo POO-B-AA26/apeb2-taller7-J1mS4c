@@ -13,6 +13,13 @@ El banco ofrece a sus clientes dos tipos de cuentas, una de CHEQUES y una de AHO
  *
  * @version 1.0
  */
+/**
+ * Problema 06: Sistema Un Banco con cuentas de cheques, ahorros y platino.
+ *
+ * @author Joan Salinas
+ *
+ * @version 1.0
+ */
 class CuentaBancaria{
     public String numeroCuenta;
     public String nombreCliente;
@@ -53,8 +60,7 @@ class CuentaCheques extends CuentaBancaria{
         this.limiteSobregiro = limiteSobregiro;
     }
 
-    @Override
-    public boolean retirar(double cantidad){
+    public boolean retirarConSobregiro(double cantidad){
         if((this.balance - cantidad) >= (this.limiteSobregiro * -1)){
             this.balance = this.balance - cantidad;
             return true;
@@ -76,7 +82,7 @@ class CuentaAhorros extends CuentaBancaria{
         this.porcentajeInteres = porcentajeInteres;
     }
 
-    public double calcularInteres(){
+    public double calcularInteresAhorros(){
         double interes = this.balance * (this.porcentajeInteres / 100);
         this.balance = this.balance + interes;
         return interes;
@@ -96,13 +102,12 @@ class CuentaPlatino extends CuentaBancaria{
         this.porcentajeInteres = 10;
     }
 
-    @Override
-    public boolean retirar(double cantidad){
+    public boolean retirarPlatino(double cantidad){
         this.balance = this.balance - cantidad;
         return true;
     }
 
-    public double calcularInteres(){
+    public double calcularInteresPlatino(){
         double interes = this.balance * (this.porcentajeInteres / 100);
         this.balance = this.balance + interes;
         return interes;
@@ -118,26 +123,27 @@ public class Problema_6_EjecutorBanco {
     public static void main(String[] args) {
         CuentaCheques cuenta1 = new CuentaCheques(200, "001-100", "Juan Perez");
         cuenta1.depositar(100);
-        cuenta1.retirar(250);
-        System.out.println(cuenta1);
+        cuenta1.retirarConSobregiro(250);
+        System.out.println("Estado de cuenta: " + cuenta1);
 
         CuentaAhorros cuenta2 = new CuentaAhorros(5, "001-200", "Maria Loja");
         cuenta2.depositar(800);
         cuenta2.retirar(100);
-        cuenta2.calcularInteres();
-        System.out.println(cuenta2);
+        cuenta2.calcularInteresAhorros();
+        System.out.println("Estado de cuenta: " + cuenta2);
 
         CuentaPlatino cuenta3 = new CuentaPlatino("001-300", "Carlos Mora");
         cuenta3.depositar(1000);
-        cuenta3.retirar(1200);
-        cuenta3.calcularInteres();
-        System.out.println(cuenta3);
+        cuenta3.retirarPlatino(1200);
+        cuenta3.calcularInteresPlatino();
+        System.out.println("Estado de cuenta: " + cuenta3);
     }
 }
 /**
  * run:
-CuentaCheques{limiteSobregiro=200.0}CuentaBancaria{numeroCuenta=001-100, nombreCliente=Juan Perez, balance=-150.0}
-CuentaAhorros{porcentajeInteres=5.0}CuentaBancaria{numeroCuenta=001-200, nombreCliente=Maria Loja, balance=735.0}
-CuentaPlatino{porcentajeInteres=10.0}CuentaBancaria{numeroCuenta=001-300, nombreCliente=Carlos Mora, balance=-220.0}
+Estado de cuenta: CuentaCheques{limiteSobregiro=200.0}CuentaBancaria{numeroCuenta=001-100, nombreCliente=Juan Perez, balance=-150.0}
+Estado de cuenta: CuentaAhorros{porcentajeInteres=5.0}CuentaBancaria{numeroCuenta=001-200, nombreCliente=Maria Loja, balance=735.0}
+Estado de cuenta: CuentaPlatino{porcentajeInteres=10.0}CuentaBancaria{numeroCuenta=001-300, nombreCliente=Carlos Mora, balance=-220.0}
 BUILD SUCCESSFUL (total time: 0 seconds)
+
  */
