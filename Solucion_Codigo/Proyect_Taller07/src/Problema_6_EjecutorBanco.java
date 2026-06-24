@@ -134,3 +134,10 @@ public class Problema_6_EjecutorBanco {
         System.out.println(cuenta3);
     }
 }
+/**
+ * run:
+CuentaCheques{limiteSobregiro=200.0}CuentaBancaria{numeroCuenta=001-100, nombreCliente=Juan Perez, balance=-150.0}
+CuentaAhorros{porcentajeInteres=5.0}CuentaBancaria{numeroCuenta=001-200, nombreCliente=Maria Loja, balance=735.0}
+CuentaPlatino{porcentajeInteres=10.0}CuentaBancaria{numeroCuenta=001-300, nombreCliente=Carlos Mora, balance=-220.0}
+BUILD SUCCESSFUL (total time: 0 seconds)
+ */

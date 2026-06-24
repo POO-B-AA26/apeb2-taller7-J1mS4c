@@ -157,3 +157,8 @@ public class Problema_1_EjecutorCapituloLibro {
         System.out.println(capitulo);
     }
 }
+/**
+ * run:
+CapituloLibro{titulo=Capitulo 1, secciones=[SeccionLibro{titulo=Introduccion, componentes=[ParrafoLibro{sentencias=[SentenciaLibro{palabras=[PalabraLibro{texto=capitulo}, PalabraLibro{texto=libro}]}, SentenciaLibro{palabras=[PalabraLibro{texto=capitulo}, PalabraLibro{texto=seccion}]}]}ComponenteSeccion{titulo=Parrafo 1}, FiguraLibro{nombreArchivo=figura1.png, descripcion=Estructura del capitulo}ComponenteSeccion{titulo=Figura 1}]}, SeccionLibro{titulo=Desarrollo, componentes=[ParrafoLibro{sentencias=[SentenciaLibro{palabras=[PalabraLibro{texto=figura}, PalabraLibro{texto=libro}]}]}ComponenteSeccion{titulo=Parrafo 2}, TablaLibro{filas=3, columnas=4}ComponenteSeccion{titulo=Tabla ejemplo}]}]}
+BUILD SUCCESSFUL (total time: 0 seconds)
+ */
